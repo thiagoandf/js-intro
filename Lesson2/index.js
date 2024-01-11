@@ -1,13 +1,17 @@
 let resultNumber = document.getElementById('result');
 
+resultNumber.textContent = parseInt(resultNumber.textContent)
 
 // Concatenation of numbers
 function concatenation(event) {
-    let intResultNumber = parseInt(resultNumber.textContent);
-    let str1 = intResultNumber.toString();
-    let str2 = event.target.id;
-    let resultString = str1 + str2;
-    resultNumber.textContent = parseInt(resultString);
+  // let intResultNumber = parseInt(resultNumber.textContent);
+  // let str1 = intResultNumber.toString();
+  // let str2 = event.target.id;
+  // let resultString = str1 + str2;
+  // resultNumber.textContent = parseInt(resultString);
+
+  let str2 = event.target.id;
+  resultNumber.textContent = parseInt(resultNumber.textContent + str2);
 };
 
 
@@ -20,9 +24,9 @@ let a, b, c;
 
 // Keeping the first number
 function memory(event) {
-    let a = parseInt(resultNumber.textContent);
+    a = parseInt(resultNumber.textContent);
     resultNumber.textContent = 0;
-    let b = event.target.id;
+    b = event.target.id;
 }
 
 
@@ -52,5 +56,5 @@ const calc = (x, operation, z) => {
 //Equals
 function equals() {
     let c = parseInt(resultNumber.textContent);
-    resultNumber.textContent = calc(a, b, c);
+  resultNumber.textContent = calc(a, eval(b), c);
 };
