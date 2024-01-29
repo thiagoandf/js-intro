@@ -1,0 +1,110 @@
+@font-face { font-family: Secular One; src: url('/Users/hanefi/Library/Fonts/SecularOne-Regular.ttf'); }
+@font-face { font-family: Satoshi; src: url('/Users/hanefi/Library/Fonts/Satoshi-Regular.otf'); } 
+
+body {
+    padding: 0;
+    margin: 0;
+    color: #FFD69F;
+    overscroll-behavior: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+label {
+    position: relative;
+    display: block;
+    padding-left: 40px;
+    cursor: pointer;
+    font-family: "Satoshi", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 120%;
+}
+
+label:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    left: 0;
+    display: block;
+    height: 24px;
+    width: 24px;
+    border: solid #FFD69F;
+    border-radius: 6px;
+    border-width: 1px;
+}
+
+label:hover:before {
+    background-color: #FFD69F;
+}
+
+input:checked + label:before {
+    background-color: #FFD69F;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #191E1B;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+
+input:checked + label:after {
+    opacity: 1;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: #191E1B;
+}
+  
+.left {
+    flex: 50%;
+}
+
+.right {
+    flex: 50%;
+}
+
+.content {
+    padding: 48px 48px 40px 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+.date-text {
+    font-family: "Secular One", sans-serif;
+    font-size: 2.5rem;
+    font-style: normal;
+    line-height: 2rem;
+    letter-spacing: -0.02125rem;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-text {
+    font-family: "Satoshi", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 120%;
+    margin-bottom: 1rem;
+}
