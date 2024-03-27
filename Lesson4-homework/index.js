@@ -66,7 +66,7 @@ function addItemtoCompleted(item) {
   label.setAttribute('for', item)
 
   li.append(checkbox, label)
-  elements.todoList.append(li)
+  elements.completedList.append(li)
 
   console.log("Checkbox is checked.");
   
