@@ -37,6 +37,9 @@ function addItemtotheList(item) {
     const li = document.createElement('li')
     const checkbox = document.createElement('input')
     const label = document.createElement('label')
+    const deleteButton = document.createElement('button')
+
+    li.id = item
 
     checkbox.type = 'checkbox'
     checkbox.id = item
@@ -45,7 +48,13 @@ function addItemtotheList(item) {
     label.innerText = item
     label.setAttribute('for', item)
 
-    li.append(checkbox, label)
+    deleteButton.id = 'deleteItem'
+    deleteButton.textContent = 'Delete'
+    deleteButton.addEventListener('click', function() {
+      deleteItems(item);
+    });
+
+    li.append(checkbox, label, deleteButton)
     elements.todoList.append(li)
 
       }
@@ -68,6 +77,15 @@ function addItemtoCompleted(item) {
   li.append(checkbox, label)
   elements.completedList.append(li)
 
-  console.log("Checkbox is checked.");
+  console.log("Checkbox is checked.")
   
+}
+
+function deleteItems(item) {
+  const elements = getElements()
+  const li = document.getElementById(item)
+
+  elements.todoList.removeChild(li)
+
+  console.log("Button pressed")
 }
