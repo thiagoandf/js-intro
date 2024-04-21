@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>My test page</title>
+
+  </head>
+
+  <style>
+    div.hello-text {
+      font-size: 64px;
+    }
+
+    #todosList > li {
+      color: blueviolet;
+    }
+  </style>
+  <body>
+
+    <div class="hello-text">
+      Bütiful TODO list!
+    </div>
+    <p class="hello-text" id="hello" name="Name">
+      Write your todo!
+    </p>
+
+    <input type="text" id="todoInput" name="TOTP"/>
+
+    <button id="submitButton" onclick="getInputValue()">
+      Poop
+    </button>
+
+    <ul id="todosList">
+    </ul>
+
+    <script src="index.js"></script>
+  </body>
+</html>
