@@ -22,8 +22,6 @@ function getInputValue() {
   if (elements.input !== null) {
     const value = String(elements.input.value)
 
-    todos.push(value)
-
     addItemtotheList(value)
 
     elements.input.value = ""
@@ -38,6 +36,12 @@ function addItemtotheList(item) {
     const checkbox = document.createElement('input')
     const label = document.createElement('label')
     const deleteButton = document.createElement('button')
+
+    todos.push({
+      createdAt: new Date().getTime(),
+      value: item,
+      isCompleted: false,
+    })
 
     li.id = item
 
@@ -81,13 +85,15 @@ function addItemtoCompleted(item) {
   
 }
 
+
+
 function deleteItems(item) {
   const elements = getElements()
   const li = document.getElementById(item)
 
   elements.todoList.removeChild(li)
 
-  const indexOfItem = todos.indexOf(item)
+  const indexOfItem = todos.findIndex( (todoItem) => todoItem.value === item)
 
   todos.splice(indexOfItem, 1)
 
