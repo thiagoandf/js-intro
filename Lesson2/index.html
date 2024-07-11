@@ -1,33 +1,78 @@
-<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>My test page</title>
-    
-  </head>
-
-  <style>
-    div.hello-text {
-      font-size: 64px;
-    }
-  </style>
-  <body>
-
-    <div class="hello-text">
-      Hello world!
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="result">
+        0
+    </div>  
+    <div id="row1">
+        <button id="buttonReset" class="doubleButton" onclick="resetCalculator()">
+            AC
+        </button>
+        <button id="buttonRemainder" class="singleButton" onclick="memory(event)">
+            %
+        </button>
+        <button id="div" class="singleButton" onclick="memory(event)">
+            /
+        </button>
+    </div>  
+    <div id="row2">
+        <button id="1" class="singleButton number" onclick="concatenation(event)">
+            1
+        </button>
+        <button id="2" class="singleButton number" onclick="concatenation(event)">
+            2
+        </button>
+        <button id="3" class="singleButton number" onclick="concatenation(event)">
+            3
+        </button>
+        <button id="mult" class="singleButton" onclick="memory(event)">
+            x
+        </button>
+    </div> 
+    <div id="row3">
+        <button id="4" class="singleButton number" onclick="concatenation(event)">
+            4
+        </button>
+        <button id="5" class="singleButton number" onclick="concatenation(event)">
+            5
+        </button>
+        <button id="6" class="singleButton number" onclick="concatenation(event)">
+            6
+        </button>
+        <button id="sub" class="singleButton" onclick="memory(event)">
+            -
+        </button>
     </div>
-    <p class="hello-text" id="hello" name="Name">
-      Hello world!
-    </p>
-
-    
-    <button id="thisButton">
-      Poop
-    </button>
-
-    <input type="text" id="totp" name="TOTP"/>
-    
+    <div id="row4">
+        <button id="7" class="singleButton number" onclick="concatenation(event)">
+            7
+        </button>
+        <button id="8" class="singleButton number" onclick="concatenation(event)">
+            8
+        </button>
+        <button id="9" class="singleButton number" onclick="concatenation(event)">
+            9
+        </button>
+        <button id="add" class="singleButton" onclick="memory(event)">
+            +
+        </button>
+    </div> 
+    <div id="row5">
+        <button id="0" class="doubleButton number" onclick="concatenation(event)">
+            0
+        </button>
+        <button id="buttonComma" class="singleButton number">
+            ,
+        </button>
+        <button id="buttonEquals" class="singleButton" onclick="equals()">
+            =
+        </button>
+    </div>
     <script src="index.js"></script>
-  </body>
+</body>
 </html>

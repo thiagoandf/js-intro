@@ -1,55 +1,60 @@
-function thisIsMyFunction() {
-  console.log('Poop')
+let resultNumber = document.getElementById('result');
+
+resultNumber.textContent = parseInt(resultNumber.textContent)
+
+// Concatenation of numbers
+function concatenation(event) {
+  // let intResultNumber = parseInt(resultNumber.textContent);
+  // let str1 = intResultNumber.toString();
+  // let str2 = event.target.id;
+  // let resultString = str1 + str2;
+  // resultNumber.textContent = parseInt(resultString);
+
+  let str2 = event.target.id;
+  resultNumber.textContent = parseInt(resultNumber.textContent + str2);
+};
 
 
-  const hello = document.getElementById('hello')
-  hello.textContent = 1234
+// Reset Function
+function resetCalculator() {
+    resultNumber.textContent = 0;
+};
 
-  const floating = parseFloat(hello.textContent)
+let a, b, c;
 
-  console.log(hello.textContent)
-
-  console.log(floating)
-  parseInt(hello.textContent)
+// Keeping the first number
+function memory(event) {
+    a = parseInt(resultNumber.textContent);
+    resultNumber.textContent = 0;
+    b = event.target.id;
 }
 
-document.getElementsByClassName('hello-text')[0].textContent = 'Pooping'
 
-document.querySelector('div')
-const helloElement = document.querySelector('.hello-text')
-document.querySelector('#hello')
+// Calculations
 
-document.querySelectorAll('div.hello-text p')
+const add = (x, z) => {
+    return x + z
+};
 
-// --------
+const sub = (x, z) => {
+    return x - z
+};
 
-helloElement.style = 'color: pink;'
-console.log(helloElement.getClientRects())
+const mult = (x, z) => {
+    return x * z
+};
 
-// ------ Events
+const div = (x, z) => {
+    return x / z
+};
 
-// document.addEventListener('click', thisIsMyFunction)
+const calc = (x, operation, z) => {
+    return operation(x, z);
+};
 
-document.getElementById('thisButton').addEventListener('click', thisIsMyFunction)
 
-
-const sum = (a, b) => {
-  // console.log(a + b)
-
-  return a + b
-}
-
-const input = document.getElementById('totp')
-    
-input.addEventListener('keydown', (event) => {
-  event.preventDefault()
-
-  const random1 = Math.random()
-  const random2 = Math.random()
-
-  const result = sum(random1, random2)
-
-  input.setAttribute('value', result)
-
-  console.log(result)
-})
+//Equals
+function equals() {
+    let c = parseInt(resultNumber.textContent);
+  resultNumber.textContent = calc(a, eval(b), c);
+};
